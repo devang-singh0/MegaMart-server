@@ -1,0 +1,19 @@
+# Dependency directories
+node_modules/
+
+# System files
+.DS_Store
+
+# Environment variables
+.env
+
+# Build files
+dist/
+build/
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.swp
