@@ -1,0 +1,127 @@
+on: [Function: socketListenerWrap],
+
+addListener: [Function: socketListenerWrap],
+
+prependListener: [Function: socketListenerWrap],
+
+setEncoding: [Function: socketSetEncoding],
+
+_paused: false,
+
+_httpMessage: [Circular *3],
+
+[Symbol(async_id_symbol)]: 1270,
+
+[Symbol(kHandle)]: [TCP],
+
+[Symbol(lastWriteQueueSize)]: 0,
+
+[Symbol(timeout)]: null,
+
+[Symbol(kBuffer)]: null,
+
+[Symbol(kBufferCb)]: null,
+
+[Symbol(kBufferGen)]: null,
+
+[Symbol(kCapture)]: false,
+
+[Symbol(kSetNoDelay)]: true,
+
+[Symbol(kSetKeepAlive)]: false,
+
+[Symbol(kSetKeepAliveInitialDelay)]: 0,
+
+[Symbol(kBytesRead)]: 0,
+
+[Symbol(kBytesWritten)]: 0
+
+},
+
+_header: null,
+
+_keepAliveTimeout: 5000,
+
+_onPendingData: [Function: bound updateOutgoingData],
+
+req: [Circular *2],
+
+_sent100: false,
+
+_expect_continue: false,
+
+_maxRequestsPerSocket: 0,
+
+locals: [Object: null prototype] {},
+
+[Symbol(kCapture)]: false,
+
+[Symbol(kBytesWritten)]: 0,
+
+[Symbol(kNeedDrain)]: false,
+
+[Symbol(corked)]: 0,
+
+[Symbol(kOutHeaders)]: [Object: null prototype] {
+
+'x-powered-by': [Array],
+
+'access-control-allow-origin': [Array],
+
+'access-control-allow-credentials': [Array]
+
+},
+
+[Symbol(errored)]: null,
+
+[Symbol(kHighWaterMark)]: 16384,
+
+[Symbol(kRejectNonStandardBodyWrites)]: false,
+
+[Symbol(kUniqueHeaders)]: null
+
+},
+
+body: {},
+
+secret: undefined,
+
+cookies: [Object: null prototype] {},
+
+signedCookies: [Object: null prototype] {},
+
+[Symbol(kCapture)]: false,
+
+[Symbol(kHeaders)]: {
+
+host: 'megamart-server-production-89fhj498fh498jfjfj.up.railway.app',
+
+authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmFuZ0BnbWFpbC5jb20iLCJwYXNzd29yZCI6InBhc3N3b3JkIiwiX2lkIjoiNjVlOTg5YWFlOTNkZjc1NzM0MzliYjQ5IiwiX192IjowLCJpYXQiOjE3MDk4MDM5NDZ9.yBHxO_SWyTGA4KdAGcHCfV9OBQ4upElppDFqvw7uvgw',
+
+'user-agent': 'PostmanRuntime/7.37.3',
+
+accept: '*/*',
+
+'postman-token': 'aac2da5a-a212-4480-bfb9-8e1293ccf1d1',
+
+'accept-encoding': 'gzip, deflate, br',
+
+referer: 'http://megamart-server-production-89fhj498fh498jfjfj.up.railway.app/user';,
+
+'x-forwarded-for': '106.205.155.92',
+
+'x-forwarded-proto': 'https',
+
+'x-envoy-external-address': '106.205.155.92',
+
+'x-request-id': '7329dec7-9f91-4698-89c7-f692b50ae402'
+
+},
+
+[Symbol(kHeadersCount)]: 22,
+
+[Symbol(kTrailers)]: null,
+
+[Symbol(kTrailersCount)]: 0
+
+}

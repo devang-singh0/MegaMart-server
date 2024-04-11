@@ -3,12 +3,14 @@ import { setToken } from "../services/auth.js";
 
 export async function creteNewUser(req, res) {
     try {
+        console.log(req.body);
         await User.create({
             fullName: req.body.fullName,
             email: req.body.email,
             password: req.body.password
         })
             .then((createdUser) => {
+                console.log('user created')
                 let token = setToken(createdUser?.toObject());
                 res.cookie('uid', token);
                 res.status(201).send({ success: true, msg: 'User created successfully' })

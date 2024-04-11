@@ -27,10 +27,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors({credentials: true}));
 app.use(cookieParser());
-app.use((req, res, next) => {
-    console.log(req);
-    next();
-});
 app.use(express.static('public'));
 app.use(isLoggedIn);
 
