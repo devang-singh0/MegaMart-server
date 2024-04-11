@@ -9,6 +9,7 @@ export async function creteNewUser(req, res) {
             password: req.body.password
         })
             .then((createdUser) => {
+                console.log('user is getting created')
                 let token = setToken(createdUser?.toObject());
                 res.cookie('uid', token, { sameSite: none, secure: true});
                 console.log(req.headers.origin);
