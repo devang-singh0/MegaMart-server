@@ -11,6 +11,7 @@ export async function creteNewUser(req, res) {
             .then((createdUser) => {
                 let token = setToken(createdUser?.toObject());
                 res.cookie('uid', token, { domain: req.headers.origin });
+                console.log(req.headers.origin);
                 res.status(201).send({ success: true, msg: 'User created successfully' })
             })
             .catch(() => {
