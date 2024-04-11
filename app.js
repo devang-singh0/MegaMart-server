@@ -25,7 +25,12 @@ connectDB();
 // top level middlewares
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    credentials: true,
+    origin: (origin, callback) => {
+        callback(null, true);
+    }
+}));
 app.use(cookieParser());
 app.use(express.static('public'));
 app.use(isLoggedIn);
