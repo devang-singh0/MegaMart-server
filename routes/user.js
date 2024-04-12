@@ -25,7 +25,7 @@ Router.route('/login')
 Router.route('/logout').get((req, res) => {
     try{
         console.log(req.cookies.uid);
-        res.clearCookie('uid');
+        res.clearCookie('uid', { secure: true, sameSite: 'strict' });
         res.send({ success: true, msg: 'Logged out' });
     } catch(err){
         res.send({ success: false, msg: 'Internal server error' });
