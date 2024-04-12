@@ -9,10 +9,13 @@ export async function creteNewUser(req, res) {
             password: req.body.password
         })
             .then((createdUser) => {
-                console.log('user is getting created')
                 let token = setToken(createdUser?.toObject());
-                res.cookie('uid', token, { sameSite: none, secure: true});
-                console.log(req.headers.origin);
+                try{
+                res.cookie('uid', token, { domain: 'localhost' });
+                }
+                catch(err){
+                    console.log(err);
+                }
                 res.status(201).send({ success: true, msg: 'User created successfully' })
             })
             .catch(() => {
