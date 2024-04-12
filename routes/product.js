@@ -6,6 +6,7 @@ const Router = express.Router();
 
 Router.route('/id/:id')
     .get(async(req, res) => {
+        console.log('id', req.params.id);
         try{
             let product = await Product.findById(req.params.id);
             console.log('before reviews', product);
