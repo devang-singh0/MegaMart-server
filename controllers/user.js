@@ -56,7 +56,7 @@ export async function updateUser(req, res) {
         if (req.profileImgURL != '') updateFields.profileImgURL = req.profileImgURL;
         User.findOneAndUpdate({ _id: req.user._id }, { $set: updateFields }, { new: true })
             .then((updatedUser) => {
-                res.cookie('uid', setToken(updatedUser.toObject()), { domain: req.headers.origin });
+                res.cookie('uid', setToken(updatedUser.toObject()), {sameSite: 'none', secure: true});
                 res.send({ success: true, msg: 'User updated successfully' });
             })
             .catch((err) => {
