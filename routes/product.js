@@ -6,14 +6,11 @@ const Router = express.Router();
 
 Router.route('/id/:id')
     .get(async(req, res) => {
-        console.log('id', req.params.id);
         try{
             let product = await Product.findOne({ _id: String(req.params.id)});
-            console.log('before reviews', product);
             let reviews = await Review.find({product: req.params.id}).populate('user', 'fullName profileImgURL');
             product = product.toObject();
             product.reviews = reviews;
-            console.log('with reviews', product);
             res.send(product);
         } catch(err){
             console.log(err);
