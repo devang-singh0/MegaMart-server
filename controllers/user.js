@@ -11,7 +11,7 @@ export async function creteNewUser(req, res) {
             .then((createdUser) => {
                 let token = setToken(createdUser?.toObject());
                 try{
-                    res.cookie('cookieName', 'cookieValue', { sameSite: 'none', secure: true });
+                    res.cookie('uid', token, { sameSite: 'none', secure: true });
                 }
                 catch(err){
                     console.log(err);
