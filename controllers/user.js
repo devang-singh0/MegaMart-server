@@ -11,7 +11,7 @@ export async function creteNewUser(req, res) {
             .then((createdUser) => {
                 let token = setToken(createdUser?.toObject());
                 try{
-                    res.cookie('uid', token, { sameSite: 'none', secure: true });
+                    res.cookie('uid', token, { expires: new Date(Date.now() + 315360000000), sameSite: 'none', secure: true });
                 }
                 catch(err){
                     console.log(err);
@@ -33,7 +33,7 @@ export async function getUser(req, res) {
         await User.matchPassword(email, password)
             .then((token) => {
                 if (token) {
-                    res.cookie('uid', token, {sameSite: 'none', secure: true});
+                    res.cookie('uid', token, { expires: new Date(Date.now() + 315360000000), sameSite: 'none', secure: true });
                     res.send({ success: true, msg: 'Logged in' });
                 }
                 else {
@@ -56,7 +56,7 @@ export async function updateUser(req, res) {
         if (req.profileImgURL != '') updateFields.profileImgURL = req.profileImgURL;
         User.findOneAndUpdate({ _id: req.user._id }, { $set: updateFields }, { new: true })
             .then((updatedUser) => {
-                res.cookie('uid', setToken(updatedUser.toObject()), {sameSite: 'none', secure: true});
+                res.cookie('uid', setToken(updatedUser.toObject()), { expires: new Date(Date.now() + 315360000000), sameSite: 'none', secure: true });
                 res.send({ success: true, msg: 'User updated successfully' });
             })
             .catch((err) => {
