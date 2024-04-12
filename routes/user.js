@@ -22,4 +22,13 @@ Router.route('/')
 Router.route('/login')
     .post(getUser);
 
+Router.route('/logout').get((req, res) => {
+    try{
+        res.clearCookie('uid');
+        res.send({ success: true, msg: 'Logged out' });
+    } catch(err){
+        res.send({ success: false, msg: 'Internal server error' });
+    }
+});
+
 export default Router;
