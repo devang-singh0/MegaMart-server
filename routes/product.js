@@ -8,9 +8,11 @@ Router.route('/id/:id')
     .get(async(req, res) => {
         try{
             let product = await Product.findById(req.params.id);
+            console.log('before reviews', product);
             let reviews = await Review.find({product: req.params.id}).populate('user', 'fullName profileImgURL');
             product = product.toObject();
             product.reviews = reviews;
+            console.log('with reviews', product);
             res.send(product);
         } catch(err){
             console.log(err);
