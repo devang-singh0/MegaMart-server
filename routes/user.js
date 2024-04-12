@@ -24,7 +24,8 @@ Router.route('/login')
 
 Router.route('/logout').get((req, res) => {
     try{
-        res.clearCookie('uid', { domain: 'megamart-server-production-89fhj498fh498jfjfj.up.railway.app', path: '/' });
+        console.log(req.cookies.uid);
+        res.clearCookie('uid', { domain: 'https://megamart-server-production-89fhj498fh498jfjfj.up.railway.app', path: '/' });
         res.send({ success: true, msg: 'Logged out' });
     } catch(err){
         res.send({ success: false, msg: 'Internal server error' });
